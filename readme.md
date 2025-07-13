@@ -31,6 +31,7 @@ O "Assistente de Aulas" é uma aplicação web que simula um ambiente de explora
 * **Proxy Seguro:** O backend protege a chave de API do Gemini, não a expondo no frontend.
 
 ## Estrutura do Projeto
+```json
 assistente_gemini_sala/
 ├── .gitignore
 ├── gemini_proxy.py
@@ -40,6 +41,8 @@ assistente_gemini_sala/
 ├── script.js
 └── styles.css
 └── imagens/ (diretório para imagens do frontend)
+```
+
  `gemini_proxy.py`: Backend FastAPI que atua como proxy para a API do Google Gemini. 🐍
 * `index.html`: Estrutura principal do frontend da aplicação. 🌐
 * `styles.css`: Estilos CSS para a interface da aplicação. 🎨
