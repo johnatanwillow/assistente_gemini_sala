@@ -1,0 +1,5 @@
+fastapi==0.111.0 # ou a versão que você está usando
+uvicorn[standard]==0.29.0 # ou a versão que você está usando
+pydantic==2.7.4 # ou a versão que você está usando
+httpx==0.27.0 # ou a versão que você está usando
+# Adicione outras dependências se tiver (como python-dotenv se for usar para a API Key)

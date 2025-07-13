@@ -1,0 +1,608 @@
+/* RESET E CONFIGURAÇÕES GLOBAIS */
+:root {
+    /* Cores */
+    --color-primary-dark: #3036a6; /* Azul escuro da sua gradiente */
+    --color-primary-medium: #8c49a8; /* Roxo da sua gradiente */
+    --color-primary-light: #3fdb85; /* Verde/Ciano da sua gradiente */
+    --color-accent: #a3e635; /* Um verde/amarelo para destaque, similar ao greenyellow da borda */
+    --color-text-dark: #020217; /* Quase preto para o texto principal */
+    --color-text-light: #f0f0f0; /* Um branco suave para texto em fundos escuros */
+    --color-background-light: #d3c7de; /* Seu rgb(211, 199, 222) convertido para variável */
+    --color-background-medium: #e0e0e0; /* Um cinza claro para fundos */
+    --color-error: #ef4444; /* Vermelho para mensagens de erro */
+    --color-success: #22c55e; /* Verde para mensagens de sucesso */
+    --color-border-subtle: #ccc; /* Cor de borda mais suave */
+
+    /* Espaçamento */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Tamanho de Fonte */
+    --font-size-base: 1rem; /* 16px */
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2.25rem;
+    --font-size-xxl: 3rem;
+
+    /* Border Radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.625rem; /* Seu 0.625rem */
+    --border-radius-lg: 1rem;
+
+    /* Sombra */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Para rolagem suave se usarmos links âncora */
+}
+
+body {
+    background-color: var(--color-background-light); /* Usando variável */
+    color: var(--color-text-dark); /* Usando variável */
+    font-family: "Inter", sans-serif;
+    line-height: 1.6; /* Unidade relativa para melhor responsividade */
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da viewport */
+    display: flex;
+    flex-direction: column; /* Para o footer ficar no final */
+}
+
+/* UTILIDADES */
+.container {
+    max-width: 72rem; /* Aumentei um pouco para mais espaço em telas grandes */
+    width: 90%;
+    margin: 0 auto;
+    padding: var(--spacing-md) 0;
+}
+
+.hidden {
+    display: none !important; /* Esconde elementos */
+}
+
+/* ANIMAÇÃO PADRÃO PARA SEÇÕES */
+.main-content section {
+    opacity: 0;
+    transform: translateY(var(--spacing-lg)); /* 2rem = 32px */
+    animation-name: appear;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out; /* Adiciona uma curva de aceleração */
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADER */
+.main-header {
+    background-image: linear-gradient(135deg, var(--color-primary-medium) 0%, var(--color-primary-light) 50%, var(--color-primary-dark) 100%); /* Gradiente mais envolvente */
+    padding: var(--spacing-lg) 0; /* Mais padding vertical */
+    text-align: center;
+    color: var(--color-text-light);
+    box-shadow: var(--shadow-md);
+    position: sticky; /* Sticky header para rolagem */
+    top: 0;
+    z-index: 1000; /* Garante que fique por cima de outros elementos */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column; /* Pilha em telas pequenas */
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm); /* Espaçamento entre logo e título */
+}
+
+.header-logo {
+    max-width: 150px; /* Reduzi um pouco para um logotipo */
+    height: auto;
+    border: 3px solid var(--color-accent); /* Bordas em volta do logo */
+    border-radius: 50%; /* Torna o logo redondo */
+    padding: 5px; /* Espaçamento interno da borda */
+    box-shadow: var(--shadow-sm);
+}
+
+.site-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para o texto */
+}
+
+.prof-name {
+    color: var(--color-accent); /* Destaca o nome do professor */
+    font-weight: 700;
+}
+
+/* MAIN CONTENT E SEÇÕES GERAIS */
+.main-content {
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+    padding: var(--spacing-xl) 0; /* Padding superior e inferior para separar do header/footer */
+}
+
+.section-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    position: relative; /* Para o underline animado */
+    padding-bottom: var(--spacing-sm);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px; /* Largura inicial */
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: var(--border-radius-sm);
+    transition: width 0.3s ease-out; /* Transição para a largura */
+}
+
+.section-title:hover::after {
+    width: 100px; /* Aumenta a largura no hover */
+}
+
+
+/* INTRO SECTION */
+.intro-section {
+    background-image: linear-gradient(135deg, var(--color-primary-medium) 0%, var(--color-primary-light) 50%, var(--color-primary-dark) 100%);
+    color: var(--color-text-light);
+    padding: var(--spacing-lg) 0;
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.intro-text {
+    font-size: var(--font-size-md);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+
+/* API KEY SECTION (MANUTENÇÃO PARA REFERÊNCIA FUTURA SE NECESSÁRIO, MAS NÃO MAIS USADO) */
+.api-key-section {
+    background-color: var(--color-background-medium);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xl);
+    text-align: center; /* Centraliza o conteúdo do formulário */
+}
+
+.api-key-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza itens flex dentro do formulário */
+    gap: var(--spacing-sm);
+}
+
+.form-label {
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+    max-width: 600px; /* Limita a largura do input group */
+    gap: var(--spacing-xs); /* Espaçamento entre input e botão */
+}
+
+.form-input {
+    flex-grow: 1; /* Permite que o input cresça */
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+    color: var(--color-text-dark);
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary-medium);
+    box-shadow: 0 0 0 3px rgba(140, 73, 168, 0.2); /* Sombra de foco roxa */
+}
+
+.btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    white-space: nowrap; /* Evita que o texto do botão quebre */
+}
+
+.btn-primary {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #24298a; /* Um tom ligeiramente mais escuro */
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    background-color: var(--color-border-subtle);
+    color: #888;
+    cursor: not-allowed;
+}
+
+.form-helper-text {
+    font-size: var(--font-size-sm);
+    color: #666;
+    margin-top: var(--spacing-xs);
+    max-width: 600px; /* Alinha com o input group */
+}
+
+.form-helper-text a {
+    color: var(--color-primary-medium);
+    text-decoration: none;
+}
+
+.form-helper-text a:hover {
+    text-decoration: underline;
+}
+
+.api-status {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+}
+
+.api-status.success {
+    background-color: rgba(34, 197, 94, 0.1); /* verde claro */
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
+}
+
+.api-status.error {
+    background-color: rgba(239, 68, 68, 0.1); /* vermelho claro */
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+/* CHAT SECTION */
+.chat-section {
+    background-color: var(--color-background-medium);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xl);
+    display: flex; /* Usar flexbox para organizar o chat */
+    flex-direction: column;
+}
+
+.chat-window {
+    height: 400px; /* Altura fixa para a janela de chat */
+    overflow-y: auto; /* Adiciona scroll se o conteúdo exceder */
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column; /* Mensagens se empilham */
+    gap: var(--spacing-xs);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para dar profundidade */
+}
+
+.chat-message {
+    max-width: 80%; /* Limita a largura da bolha de mensagem */
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    word-wrap: break-word; /* Garante que palavras longas quebrem */
+    line-height: 1.5;
+    box-shadow: var(--shadow-sm);
+}
+
+.user-message {
+    align-self: flex-end; /* Alinha mensagens do usuário à direita */
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    border-bottom-right-radius: 0; /* Cantinho reto para o lado do usuário */
+}
+
+.bot-message {
+    align-self: flex-start; /* Alinha mensagens do bot à esquerda */
+    background-color: var(--color-primary-light);
+    color: var(--color-text-dark);
+    border-bottom-left-radius: 0; /* Cantinho reto para o lado do bot */
+}
+
+.chat-form {
+    display: flex;
+    gap: var(--spacing-xs);
+    width: 100%;
+}
+
+.chat-input {
+    flex-grow: 1;
+}
+
+.btn-send {
+    background-color: var(--color-primary-medium);
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm); /* Padding igual para ícone */
+}
+
+.btn-send:hover:not(:disabled) {
+    background-color: #723c8e; /* Tom mais escuro */
+    transform: translateY(-2px);
+}
+
+.send-icon {
+    width: var(--spacing-lg); /* Tamanho do ícone */
+    height: var(--spacing-lg);
+    filter: invert(100%); /* Transforma o ícone branco para fundos escuros */
+}
+
+
+/* FEATURES SECTION (RECURSOS MÁGICOS) */
+.features-section {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    background-color: var(--color-background-light);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo, mínimo 280px */
+    gap: var(--spacing-md);
+    justify-items: center; /* Centraliza os cards dentro do grid */
+}
+
+.feature-card {
+    background-image: linear-gradient(135deg, #a750c1 0%, #6be4a0 50%, #464bbc 100%); /* Variação da gradiente */
+    color: var(--color-text-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: left; /* Conteúdo do card alinhado à esquerda */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.feature-card h3 {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-accent); /* Títulos dos cards em destaque */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    opacity: 0.9;
+}
+
+.feature-icon {
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(270deg) brightness(100%) contrast(100%); /* Tenta deixar os ícones brancos */
+}
+
+
+/* FOOTER */
+.main-footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    margin-top: auto; /* Empurra o footer para o final da página */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra interna */
+    font-size: var(--font-size-sm);
+}
+
+.main-footer p {
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.9;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row; /* Volta a ser linha em telas maiores */
+        gap: var(--spacing-md);
+    }
+
+    .site-title {
+        font-size: var(--font-size-xxl);
+    }
+
+    .intro-text {
+        font-size: var(--font-size-lg);
+    }
+
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .input-group {
+        flex-direction: row; /* Input e botão na mesma linha */
+    }
+
+    .btn {
+        min-width: unset; /* Remove min-width em telas maiores */
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas maiores */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo {
+        max-width: 100px; /* Menor em telas muito pequenas */
+    }
+
+    .site-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .intro-text {
+        font-size: var(--font-size-base);
+    }
+
+    .form-input, .btn {
+        padding: var(--spacing-xs); /* Padding menor em telas pequenas */
+        font-size: var(--font-size-sm);
+    }
+    
+    .input-group {
+        flex-direction: column; /* Pilha input e botão em telas muito pequenas */
+        align-items: stretch;
+    }
+
+    .chat-message {
+        max-width: 95%; /* Ocupa mais espaço em telas pequenas */
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+
+    .feature-card {
+        text-align: center; /* Centraliza o texto nos cards em telas pequenas */
+        align-items: center;
+    }
+
+    .feature-card h3 {
+        flex-direction: column; /* Ícone e texto em coluna */
+        text-align: center;
+        gap: 0;
+    }
+}
+
+/* Animação para quando o chat-section é exibido (via JS) */
+.chat-section:not(.hidden) {
+    animation-delay: 100ms; /* Pequeno delay para a animação aparecer após o carregamento inicial */
+}
+
+/* Animação para os cards de feature aparecerem com delay */
+.feature-card {
+    opacity: 0;
+    transform: translateY(var(--spacing-md));
+    animation-name: appear-item;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.feature-card:nth-child(1) { animation-delay: 1000ms; }
+.feature-card:nth-child(2) { animation-delay: 1500ms; }
+.feature-card:nth-child(3) { animation-delay: 2000ms; }
+.feature-card:nth-child(4) { animation-delay: 2500ms; }
+.feature-card:nth-child(5) { animation-delay: 3000ms; }
+.feature-card:nth-child(6) { animation-delay: 3700ms; }
+.feature-card:nth-child(7) { animation-delay: 4000ms; }
+.feature-card:nth-child(8) { animation-delay: 4500ms; }
+.feature-card:nth-child(9) { animation-delay: 5000ms; }
+
+
+@keyframes appear-item {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-secondary {
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+    margin-top: var(--spacing-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #8cc42a;
+    transform: translateY(-2px);
+}
+
+.speaker-icon-small {
+    width: var(--spacing-md);
+    height: var(--spacing-md);
+    filter: none; /* Mantém a cor original do SVG */
+}
+
+.chat-message.bot-message {
+    position: relative;
+    padding-right: var(--spacing-xl);
+}
+
+.audio-button {
+    position: absolute;
+    top: 50%;
+    right: var(--spacing-sm);
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
+    transition: transform 0.2s ease-in-out;
+}
+
+.audio-button:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.audio-button:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+.speaker-icon {
+    width: 100%;
+    height: 100%;
+    filter: invert(100%);
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente de aulas - Prof. Johnatan Willow</title>
+    
+    <link rel="stylesheet" href="./styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <img src="./imagens/Foto G.png" alt="Logotipo do Comandante Willow" class="header-logo"/>
+            <h1 class="site-title">Assistente de Aulas <span class="prof-name">Prof. Johnatan Willow</span></h1>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="intro-section">
+            <div class="container">
+                <p class="intro-text">
+                    Bem-vindo(a), Recruta da Frota de Colonização! 
+                    Use este terminal para desvendar os mistérios da Língua Prime e aprimorar seus protocolos de comunicação, vocabulário e fluência. 
+                    Sua jornada para o domínio da comunicação com a LINGUA FRANCA começa agora!
+                </p>
+                <button id="read-intro-button" class="btn btn-secondary">
+                    <img src="./imagens/speaker.svg" alt="Ouvir Introdução" class="speaker-icon-small"> Ouvir Transmissão de Boas-Vindas
+                </button>
+            </div>
+        </section>
+
+        <section id="chat-section" class="chat-section">
+            <div class="container">
+                <h2 class="section-title">Inicie sua Missão de Conhecimento</h2>
+                <div id="chat-window" class="chat-window">
+                    <div class="chat-message bot-message">
+                        Olá, Recruta! Como posso ajudar você a calibrar seus módulos de comunicação hoje? 
+                        Pergunte sobre gramática, vocabulário, ou peça para eu gerar um cenário de simulação!
+                    </div>
+                </div>
+                <form id="chat-form" class="chat-form">
+                    <input 
+                        type="text" 
+                        id="user-input" 
+                        placeholder="Digite sua pergunta ou comando aqui..." 
+                        class="form-input chat-input"
+                        autocomplete="off"
+                        disabled
+                    >
+                    <button type="submit" class="btn btn-send" disabled>
+                        <img src="./imagens/send-icon.svg" alt="Enviar" class="send-icon">
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section id="features-section" class="features-section">
+            <div class="container">
+                <h2 class="section-title">Escolha e digite um dos Protocolos de Treinamento para sua Aprendizagem</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><img src="./imagens/scroll-icon.svg" alt="Corretor" class="feature-icon"> Calibração de Módulos de Tradução</h3>
+                        <p>Aprimore sua gramática para comunicações interplanetárias com correções instantâneas e explicações claras.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><img src="./imagens/crystal-ball-icon.svg" alt="Vocabulário" class="feature-icon"> Decifrando Registros da Antiga Terra</h3>
+                        <p>Expanda seu vocabulário explorando termos e expressões de arquivos históricos da humanidade. </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><img src="./imagens/shield-icon.svg" alt="Debate" class="feature-icon"> Tribunal de Resolução de Conflitos Interplanetários</h3>
+                        <p>Pratique a argumentação e persuasão em inglês para resolver disputas de recursos e territórios. </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><img src="./imagens/map-icon.svg" alt="Caça ao Tesouro" class="feature-icon"> Rastreamento de Sondas Perdidas</h3>
+                        <p>Decifre sinais de rádio em inglês e use o raciocínio lógico para encontrar dados vitais. </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><img src="./imagens/sword-icon.svg" alt="Duelo" class="feature-icon"> Simulações de Combate Lexical</h3>
+                        <p>Teste seu vocabulário e comandos táticos em um formato competitivo e divertido.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><img src="./imagens/quidditch-icon.svg" alt="Quiz" class="feature-icon"> Olimpíada Interplanetária da Língua Prime</h3>
+                        <p>Responda rapidamente a perguntas sobre gramática, vocabulário e cultura do sistema solar. </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><img src="./imagens/spellbook-icon.svg" alt="Recitação" class="feature-icon"> Relatórios de Missão e Diários de Bordo</h3>
+                        <p>Pratique a fluência e pronúncia através de transmissões orais curtas sobre suas explorações. </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><img src="./imagens/economy-icon.svg" alt="Economia" class="feature-icon"> RPG: Diario Financeiro Pesssoal</h3>
+                        <p>Desenvolva habilidades de gerenciamento de recursos e vocabulário financeiro em um RPG imersivo. </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><img src="./imagens/culture-icon.svg" alt="Cultura" class="feature-icon"> Conferência Interplanetária de Cultura: Os Arquivos da Língua Prime</h3>
+                        <p>Explore as diversas culturas humanas no sistema solar e apresente seus conhecimentos. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Desenvolvido por Prof. Johnatan Willow</p>
+            <p>Gamificação na Sala de Aula de Inglês: Estratégias, Implementações e Mecânicas Autorais.</p> 
+        </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>

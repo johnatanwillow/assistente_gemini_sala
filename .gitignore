@@ -1,0 +1,36 @@
+# Arquivos de ambiente Python
+.venv/
+venv/
+env/
+
+# Arquivos de cache e compilação do Python
+__pycache__/
+*.pyc
+*.pyd
+*.so
+
+# Arquivos de dados gerados
+*.sqlite
+*.db # Se algum outro banco de dados SQLite for gerado
+
+# Arquivos de configuração de ambiente
+.env # Para variáveis de ambiente locais, como sua API Key do Gemini
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários de IDEs (como VS Code, PyCharm)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos específicos do sistema operacional
+.DS_Store # macOS
+Thumbs.db # Windows
+desktop.ini # Windows
+
+# Pastas e arquivos de build/distribuição (se aplicável no futuro)
+build/
+dist/
+*.egg-info/
