@@ -6,7 +6,7 @@ Este projeto é um sistema de gamificação para auxiliar Recrutas da Frota de C
 
 * [Visão Geral](#visão-geral)
 * [Funcionalidades](#funcionalidades)
-     *[O parceiro de estudos inteligente](#O-parceiro-de-estudos-inteligente)
+    *[O parceiro de estudos inteligente](#O-parceiro-de-estudos-inteligente)
 * [Estrutura do Projeto](#estrutura-do-projeto)
 * [Segurança e Informações Sensíveis](#segurança-e-informações-sensíveis)
 * [Configuração e Instalação](#configuração-e-instalação)
