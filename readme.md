@@ -6,6 +6,7 @@ Este projeto é um sistema de gamificação para auxiliar Recrutas da Frota de C
 
 * [Visão Geral](#visão-geral)
 * [Funcionalidades](#funcionalidades)
+     *[O parceiro de estudos inteligente](#O-parceiro-de-estudos-inteligente)
 * [Estrutura do Projeto](#estrutura-do-projeto)
 * [Segurança e Informações Sensíveis](#segurança-e-informações-sensíveis)
 * [Configuração e Instalação](#configuração-e-instalação)
@@ -29,6 +30,38 @@ O "Assistente de Aulas" é uma aplicação web que simula um ambiente de explora
 * **Sistema de XP:** Pontuação por atividades concluídas, incentivando o aprendizado.
 * **Modo Comandante:** Um modo especial para o Professor Johnatan Willow gerenciar e moldar atividades da turma.
 * **Proxy Seguro:** O backend protege a chave de API do Gemini, não a expondo no frontend.
+
+### O parceiro de estudos inteligente ✨
+
+Este projeto, o "Assistente de Aulas - Prof. Johnatan Willow", é como um **parceiro de estudo inteligente** que usa a tecnologia de Inteligência Artificial para te ajudar a aprender inglês. Ele funciona como um "Terminal de Missões" da nossa Frota de Colonização Espacial, tornando o aprendizado divertido e eficaz.
+
+Vamos ver em detalhes o que ele já consegue fazer e onde podemos torná-lo ainda melhor:
+
+#### 1. Conversação Personalizada: Praticando o Diálogo em Inglês
+
+* **Simulação de Diálogos:** **Já Faz!** Nosso agente de IA pode criar conversas simuladas, como se você estivesse em uma situação real (por exemplo, viajando, fazendo uma entrevista, ou pedindo comida em um restaurante). Você pode praticar seu inglês falando com ele, sem medo de errar, em um ambiente seguro e temático de exploração espacial.
+* **Feedback Instantâneo (O que acertar e melhorar):** **Já Faz!** Quando você fala ou escreve, o agente consegue te dizer na hora o que precisa ser ajustado na sua gramática (as regras da língua), na forma como você pronuncia as palavras, na sua fluidez (o quão "natural" você soa) e no seu vocabulário. Ele te mostra a correção e explica o porquê, como um "protocolo correto".
+* **Adaptação ao Seu Nível (Mais fácil ou mais difícil):** **Já Faz!** Como o nosso assistente usa uma inteligência artificial avançada (a API Google Gemini), ele consegue perceber o seu nível de inglês. Assim, ele adapta as conversas e as palavras usadas para que você sempre tenha um desafio que te motive, sem ser muito fácil nem muito difícil.
+
+#### 2. Suporte 24 Horas por Dia, 7 Dias por Semana: Tire Suas Dúvidas a Qualquer Hora
+
+* **Respostas para Suas Perguntas:** **Já Faz!** Se você tiver dúvidas sobre gramática, o significado de uma palavra, ou alguma expressão em inglês, pode perguntar ao agente a qualquer momento. Ele dará explicações claras e exemplos. Ele também pode responder perguntas sobre as atividades da aula, como os "Módulos de Tradução" ou "Simulações de Combate Lexical".
+* **Material de Apoio (Áudio e Vocabulário):** **Parcialmente Implementado / Sugestão de Melhoria.** O agente pode te dar sugestões de vocabulário e sinônimos relacionados ao espaço. Além disso, as respostas do Terminal de Missões podem ser ouvidas em voz alta (como uma "transmissão de boas-vindas"), o que ajuda na pronúncia. Para o futuro, poderíamos pensar em como o agente poderia também te indicar ou gerar links para vídeos ou outros materiais de apoio de forma mais direta.
+
+#### 3. Atividades e Jogos Interativos: Aprendendo se Divertindo
+
+* **Exercícios Adaptativos (Desafios Sob Medida):** **Já Faz!** O agente pode criar pequenos desafios e atividades interativas (como os "Protocolos de Treinamento" listados, por exemplo, "Rastreamento de Sondas Perdidas" ou "Simulações de Combate Lexical"). Ele pode até mesmo gerar exercícios específicos com base nas áreas que você mais precisa melhorar.
+* **Gamificação (Aulas Viram Missões!):** **Já Faz!** Todo o sistema foi pensado como um jogo! Você é um "Recruta da Frota de Colonização Espacial", e suas tarefas são "Missões". Você ganha Pontos de Experiência (XP) a cada acerto, e temos até um "RPG: Diário Financeiro Pessoal" para você aprender sobre finanças em inglês de forma divertida.
+
+#### 4. Análise de Progresso e Melhora no Ensino: Entendendo o seu Desempenho
+
+* **Identificação de Erros Comuns:** **Parcialmente Implementado / Sugestão de Melhoria.** O agente de IA consegue perceber os erros que você comete durante a conversa e te ajudar a corrigi-los na hora. No entanto, ele não "guarda" um histórico dos seus erros ao longo do tempo (entre diferentes sessões) para criar relatórios detalhados para o professor. Para o futuro, poderíamos desenvolver essa capacidade de "lembrar" seus padrões de erro persistentes.
+* **Planos de Estudo Personalizados:** **Parcialmente Implementado / Sugestão de Melhoria.** A IA já adapta a conversa em tempo real ao seu nível e necessidades. Mas ela não gera um "plano de estudos" completo e estruturado para você seguir por vários dias ou semanas. Isso seria uma funcionalidade mais avançada para o futuro, onde o agente poderia criar trilhas de aprendizado mais longas e personalizadas.
+
+#### 5. Ajuda para Escrever e Corrigir Textos
+
+* **Assistência na Escrita:** **Já Faz!** O módulo de "Calibração de Módulos de Tradução" e a capacidade de dar feedback sobre gramática e vocabulário significam que o agente pode te ajudar a escrever textos, sugerindo como melhorar suas frases, a ortografia e o estilo.
+* **Correção de Atividades Escritas:** **Já Faz!** Assim como ele corrige suas frases durante a conversa, o agente pode te ajudar a corrigir exercícios de escrita, mostrando onde você errou e explicando a forma correta. Isso torna o processo mais rápido para o professor e dá um retorno detalhado para você, Recruta.
 
 ## Estrutura do Projeto
 ```json
