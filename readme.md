@@ -5,8 +5,14 @@ Este projeto é um sistema de gamificação para auxiliar Recrutas da Frota de C
 ## Sumário 📜
 
 * [Visão Geral](#visão-geral)
-* [Funcionalidades](#funcionalidades)
-    *[O parceiro de estudos inteligente](#O-parceiro-de-estudos-inteligente)
+* [Agente de IA: Um Parceiro de Estudos Inteligente](#agente-de-ia-um-parceiro-de-estudos-inteligente)
+    * [Funcionalidades Principais](#funcionalidades-principais)
+    * [Capacidades Detalhadas do Agente de IA](#capacidades-detalhadas-do-agente-de-ia)
+        * [1. Conversação Personalizada: Praticando o Diálogo em Inglês](#1-conversação-personalizada-praticando-o-diálogo-em-inglês)
+        * [2. Suporte 24 Horas por Dia, 7 Dias por Semana: Tire Suas Dúvidas a Qualquer Hora](#2-suporte-24-horas-por-dia-7-dias-por-semana-tire-suas-dúvidas-a-qualquer-hora)
+        * [3. Atividades e Jogos Interativos: Aprendendo se Divertindo](#3-atividades-e-jogos-interativos-aprendendo-se-divertindo)
+        * [4. Análise de Progresso e Melhora no Ensino: Entendendo o seu Desempenho](#4-análise-de-progresso-e-melhora-no-ensino-entendendo-o-seu-desempenho)
+        * [5. Ajuda para Escrever e Corrigir Textos](#5-ajuda-para-escrever-e-corrigir-textos)
 * [Estrutura do Projeto](#estrutura-do-projeto)
 * [Segurança e Informações Sensíveis](#segurança-e-informações-sensíveis)
 * [Configuração e Instalação](#configuração-e-instalação)
@@ -22,18 +28,22 @@ Este projeto é um sistema de gamificação para auxiliar Recrutas da Frota de C
 
 O "Assistente de Aulas" é uma aplicação web que simula um ambiente de exploração espacial e colonização, onde os alunos (Recrutas) interagem com um "Terminal de Missões" (assistente de IA) para melhorar suas habilidades em inglês. O sistema inclui um backend em FastAPI que serve como proxy para a API do Google Gemini, garantindo a segurança da chave de API, e um frontend interativo com HTML, CSS e JavaScript.
 
-## Funcionalidades ✨
-
-* **Assistência de IA:** Suporte dinâmico para dúvidas de inglês (gramática, vocabulário, etc.) através do modelo Gemini 1.5 Flash.
-* **Temática Gamificada:** Experiência imersiva com linguagem e cenários de exploração espacial.
-* **Módulos de Treinamento:** Diversas atividades como "Calibração de Módulos de Tradução", "Simulações de Combate Lexical" e "RPG: Diário Financeiro Pessoal".
-* **Sistema de XP:** Pontuação por atividades concluídas, incentivando o aprendizado.
-* **Modo Comandante:** Um modo especial para o Professor Johnatan Willow gerenciar e moldar atividades da turma.
-* **Proxy Seguro:** O backend protege a chave de API do Gemini, não a expondo no frontend.
-
-### O parceiro de estudos inteligente ✨
+## Agente de IA: Um Parceiro de Estudos Inteligente ✨
 
 Este projeto, o "Assistente de Aulas - Prof. Johnatan Willow", é como um **parceiro de estudo inteligente** que usa a tecnologia de Inteligência Artificial para te ajudar a aprender inglês. Ele funciona como um "Terminal de Missões" da nossa Frota de Colonização Espacial, tornando o aprendizado divertido e eficaz.
+
+### Funcionalidades Principais
+
+Aqui estão as principais características do nosso assistente de IA:
+
+* **Assistência de IA:** Oferece um suporte dinâmico para suas dúvidas de inglês (como gramática, vocabulário e mais) usando o poderoso modelo Gemini 1.5 Flash.
+* **Temática Gamificada:** Proporciona uma experiência de aprendizado envolvente e divertida com uma linguagem e cenários inspirados na exploração espacial.
+* **Módulos de Treinamento:** Contém diversas atividades específicas, como "Calibração de Módulos de Tradução", "Simulações de Combate Lexical" e um "RPG: Diário Financeiro Pessoal", para você praticar diferentes habilidades.
+* **Sistema de XP:** Você ganha pontos de experiência (XP) ao concluir atividades, o que te motiva a aprender cada vez mais.
+* **Modo Comandante:** Existe um modo especial para o Professor Johnatan Willow, onde ele pode gerenciar e adaptar as atividades para a turma.
+* **Proxy Seguro:** O sistema de bastidores (backend) protege a chave de acesso da IA (API Key do Gemini), garantindo que ela não fique exposta na parte visível do site (frontend).
+
+### Capacidades Detalhadas do Agente de IA
 
 Vamos ver em detalhes o que ele já consegue fazer e onde podemos torná-lo ainda melhor:
 
@@ -50,7 +60,7 @@ Vamos ver em detalhes o que ele já consegue fazer e onde podemos torná-lo aind
 
 #### 3. Atividades e Jogos Interativos: Aprendendo se Divertindo
 
-* **Exercícios Adaptativos (Desafios Sob Medida):** **Já Faz!** O agente pode criar pequenos desafios e atividades interativas (como os "Protocolos de Treinamento" listados, por exemplo, "Rastreamento de Sondas Perdidas" ou "Simulações de Combate Lexical"). Ele pode até mesmo gerar exercícios específicos com base nas áreas que você mais precisa melhorar.
+* **Exercícios Adaptativos (Desafios Sob Medida):** **Já Faz!** O agente pode criar pequenos desafios e atividades interativas (como os "Protocolos de Treinamento" listados no site, por exemplo, "Rastreamento de Sondas Perdidas" ou "Simulações de Combate Lexical"). Ele pode até mesmo gerar exercícios específicos com base nas áreas que você mais precisa melhorar.
 * **Gamificação (Aulas Viram Missões!):** **Já Faz!** Todo o sistema foi pensado como um jogo! Você é um "Recruta da Frota de Colonização Espacial", e suas tarefas são "Missões". Você ganha Pontos de Experiência (XP) a cada acerto, e temos até um "RPG: Diário Financeiro Pessoal" para você aprender sobre finanças em inglês de forma divertida.
 
 #### 4. Análise de Progresso e Melhora no Ensino: Entendendo o seu Desempenho
@@ -74,7 +84,6 @@ assistente_gemini_sala/
 ├── script.js
 └── styles.css
 └── imagens/ (diretório para imagens do frontend)
-```
 
  `gemini_proxy.py`: Backend FastAPI que atua como proxy para a API do Google Gemini. 🐍
 * `index.html`: Estrutura principal do frontend da aplicação. 🌐
