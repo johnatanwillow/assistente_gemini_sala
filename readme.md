@@ -84,6 +84,7 @@ assistente_gemini_sala/
 ├── script.js
 └── styles.css
 └── imagens/ (diretório para imagens do frontend)
+```
 
  `gemini_proxy.py`: Backend FastAPI que atua como proxy para a API do Google Gemini. 🐍
 * `index.html`: Estrutura principal do frontend da aplicação. 🌐
